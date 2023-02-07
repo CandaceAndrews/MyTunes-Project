@@ -12,15 +12,22 @@
 </head>
 
 <body>
+
+  <h1 class="page-title">Really Awesome Music Site</h1>
+
   <form id="search-form" method="post">
     <div>
-      <label for="search-text">Search Music Artist</label>
-      <input type="text" name="search-text" id="search-text" placeholder="Enter the name of Artist" required />
+      <!-- <label for="search-text">Search Music Artist</label> -->
+      <input type="text" name="search-text" id="search-text" placeholder="Search for Artist" required />
     </div>
+
     <button type="submit">Search</button>
   </form>
-  <h3>Here are the results of your search: </h3>
+
+  <h3 class="search-results-h3">Search Results: </h3>
+
   <div id="musicContainer"></div>
+
 </body>
 
 </html>

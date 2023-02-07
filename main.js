@@ -29,27 +29,40 @@ function search(searchTerm) {
         });
 }
 
-//Function---Takes results and makes div for each trackName
+//Function---What to display from API results
 function buildResultsHtml(resultArray) {
     for (let spot of resultArray) {
-        //Track Name---
+        ///div for all song content
         let songDiv = document.createElement("div")
-        let title = document.createElement("h2");
-        title.innerText = spot.trackName;
+        songDiv.classList.add("songDiv");
 
         //Artist Name---
-        let artistName = document.createElement('h1')
+        let artistName = document.createElement("p")
+        artistName.classList.add("artist-name")
         artistName.innerText = spot.artistName;
 
-        //Album Art
-        let coverDiv = document.createElement("img")
-        coverDiv.src = spot.artworkUrl100;
+        //Track Name---
+        let trackTitle = document.createElement("p");
+        trackTitle.classList.add("track-name");
+        trackTitle.innerText = `Track: ${spot.trackName}`;
+
+        //Album Title---
+        let albumTitle = document.createElement("p")
+        albumTitle.classList.add("album-title");
+        albumTitle.innerText = `Album: ${spot.collectionName}`;
+
+        //Album Art---
+        let coverThumbnail = document.createElement("img")
+        coverThumbnail.classList.add("cover-art");
+        coverThumbnail.src = spot.artworkUrl100;
 
         //Append to container---
         songDiv.appendChild(artistName);
-        songDiv.appendChild(title);
-        songDiv.appendChild(coverDiv);
+        songDiv.appendChild(trackTitle);
+        songDiv.appendChild(albumTitle);
+        songDiv.appendChild(coverThumbnail);
         container.appendChild(songDiv);
 
     }
 }
+

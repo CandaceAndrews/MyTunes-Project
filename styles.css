@@ -5,3 +5,29 @@
 body {
     background-color: rgb(146, 194, 165);
 }
+
+.page-title {
+    background-color: rgb(205, 208, 150);
+}
+
+button {
+    background-color: brown;
+}
+
+.search-results-h3 {
+    background-color: pink;
+}
+
+#musicContainer {
+    background-color: rgb(144, 126, 147);
+}
+
+.songDiv {}
+
+.track-name {}
+
+.artist-name {}
+
+.cover-art {}
+
+.album-title {}

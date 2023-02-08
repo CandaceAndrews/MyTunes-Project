@@ -25,50 +25,61 @@ function search(searchTerm) {
             return response.json();
         })
         .then(function (resultData) {
+            container.innerHTML = '';
             buildResultsHtml(resultData.results);
         });
 }
 
 // Function---What to display from API results
 function buildResultsHtml(resultArray) {
-    for (let spot of resultArray) {
 
-        // div for all song content
-        let songDiv = document.createElement("div")
-        songDiv.classList.add("songDiv");
+    // Check if input from user is in the API results
+    if (resultArray.length === 0) {
+        let noResults = document.createElement("p");
+        noResults.classList.add("no-results");
+        noResults.innerText = "No results found";
+        container.appendChild(noResults);
+        return;
 
-        // Track Name---
-        let trackTitle = document.createElement("p");
-        trackTitle.classList.add("track-name");
-        trackTitle.innerText = `Track: ${spot.trackName}`;
+    } else {
 
-        // Click-Event for each demo button
-        trackTitle.addEventListener('click', function (event) {
-            let demo = spot.previewUrl;
-            musicPlayer.src = demo;
-        })
+        for (let spot of resultArray) {
+            // div for all song content
+            let songDiv = document.createElement("div")
+            songDiv.classList.add("songDiv");
 
-        // Artist Name---
-        let artistName = document.createElement("p")
-        artistName.classList.add("artist-name")
-        artistName.innerText = spot.artistName;
+            // Track Name---
+            let trackTitle = document.createElement("p");
+            trackTitle.classList.add("track-name");
+            trackTitle.innerText = `Track: ${spot.trackName}`;
 
-        // Album Title---
-        let albumTitle = document.createElement("p")
-        albumTitle.classList.add("album-title");
-        albumTitle.innerText = `Album: ${spot.collectionName}`;
+            // Click-Event for each demo button
+            trackTitle.addEventListener('click', function (event) {
+                let demo = spot.previewUrl;
+                musicPlayer.src = demo;
+            })
 
-        // Album Art---
-        let coverThumbnail = document.createElement("img")
-        coverThumbnail.classList.add("cover-art");
-        coverThumbnail.src = spot.artworkUrl100;
+            // Artist Name---
+            let artistName = document.createElement("p")
+            artistName.classList.add("artist-name")
+            artistName.innerText = spot.artistName;
 
-        // Append to container---
-        songDiv.appendChild(trackTitle);
-        songDiv.appendChild(artistName);
-        songDiv.appendChild(albumTitle);
-        songDiv.appendChild(coverThumbnail);
-        container.appendChild(songDiv);
+            // Album Title---
+            let albumTitle = document.createElement("p")
+            albumTitle.classList.add("album-title");
+            albumTitle.innerText = `Album: ${spot.collectionName}`;
 
+            // Album Art---
+            let coverThumbnail = document.createElement("img")
+            coverThumbnail.classList.add("cover-art");
+            coverThumbnail.src = spot.artworkUrl100;
+
+            // Append to container---
+            songDiv.appendChild(trackTitle);
+            songDiv.appendChild(artistName);
+            songDiv.appendChild(albumTitle);
+            songDiv.appendChild(coverThumbnail);
+            container.appendChild(songDiv);
+        }
     }
 }

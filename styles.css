@@ -68,3 +68,7 @@ button {
 .track-name:hover {
     background-color: #64c889;
 }
+
+.no-results {
+    font-size: 25px;
+}

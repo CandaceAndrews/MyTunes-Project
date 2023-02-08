@@ -7,6 +7,7 @@ body {
     font-family: Open Sans;
 }
 
+
 .page-title {
     display: inline-flex;
     background-color: #314537;
@@ -16,15 +17,24 @@ body {
     border-bottom-width: 2px;
     border-bottom-color: #64c889;
     border-bottom-style: solid;
+    width: 50%;
 }
 
 #serach-form {
     display: inline-flex;
 }
 
+#search-text {
+    width: 30%;
+    height: 20px;
+    background-color: #e9ebe9;
+    color: #314537;
+}
+
 button {
     display: inline-flex;
-    background-color: #64c889;
+    background-color: #89e9d0;
+    width: fit-content;
 }
 
 .search-results-h3 {
@@ -41,18 +51,20 @@ button {
     grid-template-columns: auto auto auto auto;
     gap: 40px;
     justify-content: center;
+    width: fit-content;
 }
 
 .songDiv {
     background-color: #dae5d6;
+    text-align: center;
 }
 
-.track-name {}
+.cover-art {
+    border-radius: 10%;
+    border-style: solid;
+    border-color: #314537;
+}
 
-.artist-name {}
-
-.album-title {}
-
-.cover-art {}
-
-#audio-player {}
+.track-name:hover {
+    background-color: #64c889;
+}

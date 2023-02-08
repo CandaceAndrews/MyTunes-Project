@@ -3,15 +3,22 @@
 }
 
 body {
-    background-color: rgb(146, 194, 165);
+    background-color: rgb(35, 36, 41);
+    font-family: Open Sans;
+    color: white;
 }
 
 .page-title {
-    background-color: rgb(205, 208, 150);
+    background-color: #004175;
+    font-size: 22px;
+    padding: 10px;
+    border-bottom-width: 2px;
+    border-bottom-color: #89DEEF;
+    border-bottom-style: solid;
 }
 
 button {
-    background-color: brown;
+    background-color: rgb(50, 145, 166);
 }
 
 .search-results-h3 {
@@ -19,7 +26,10 @@ button {
 }
 
 #musicContainer {
-    background-color: rgb(144, 126, 147);
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+    justify-content: center;
 }
 
 .songDiv {}
@@ -31,3 +41,5 @@ button {
 .album-title {}
 
 .cover-art {}
+
+#audio-player {}

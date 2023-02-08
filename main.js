@@ -42,7 +42,7 @@ function buildResultsHtml(resultArray) {
         trackTitle.classList.add("track-name");
         trackTitle.innerText = `Track: ${spot.trackName}`;
 
-        // Click-Event for each Track Title
+        // Click-Event for each demo button
         trackTitle.addEventListener('click', function (event) {
             let demo = spot.previewUrl;
             musicPlayer.src = demo;

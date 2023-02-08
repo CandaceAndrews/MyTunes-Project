@@ -12,20 +12,25 @@
 </head>
 
 <body>
-
+  <!-- Title -->
   <h1 class="page-title">Really Awesome Music Site</h1>
 
+  <!-- Audo Player -->
+  <audio id="audio-player" autoplay controls src=>
+  </audio>
+
+  <!-- Form for input -->
   <form id="search-form" method="post">
     <div>
-      <!-- <label for="search-text">Search Music Artist</label> -->
       <input type="text" name="search-text" id="search-text" placeholder="Search for Artist" required />
     </div>
 
+    <!-- Search Button -->
     <button type="submit">Search</button>
   </form>
 
+  <!-- Results Area -->
   <h3 class="search-results-h3">Search Results: </h3>
-
   <div id="musicContainer"></div>
 
 </body>

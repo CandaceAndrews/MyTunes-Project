@@ -1,28 +1,39 @@
-* {
+/* * {
     border: solid rgb(135, 73, 73)
-}
+} */
 
 body {
-    background-color: rgb(35, 36, 41);
+    background-color: #e7ede4;
     font-family: Open Sans;
-    color: white;
 }
 
 .page-title {
-    background-color: #004175;
+    display: inline-flex;
+    background-color: #314537;
+    color: #dae5d6;
     font-size: 22px;
     padding: 10px;
     border-bottom-width: 2px;
-    border-bottom-color: #89DEEF;
+    border-bottom-color: #64c889;
     border-bottom-style: solid;
 }
 
+#serach-form {
+    display: inline-flex;
+}
+
 button {
-    background-color: rgb(50, 145, 166);
+    display: inline-flex;
+    background-color: #64c889;
 }
 
 .search-results-h3 {
-    background-color: pink;
+    background-color: #314537;
+    color: #dae5d6;
+    border-bottom-width: 2px;
+    border-bottom-color: #64c889;
+    border-bottom-style: solid;
+
 }
 
 #musicContainer {
@@ -32,7 +43,9 @@ button {
     justify-content: center;
 }
 
-.songDiv {}
+.songDiv {
+    background-color: #dae5d6;
+}
 
 .track-name {}
 

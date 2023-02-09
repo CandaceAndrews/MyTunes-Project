@@ -40,8 +40,6 @@ function buildResultsHtml(resultArray) {
         noResults.classList.add("no-results");
         noResults.innerText = "No results found";
         container.appendChild(noResults);
-        return;
-
     } else {
 
         for (let spot of resultArray) {
@@ -54,7 +52,7 @@ function buildResultsHtml(resultArray) {
             trackTitle.classList.add("track-name");
             trackTitle.innerText = `Track: ${spot.trackName}`;
 
-            // Click-Event for each demo button -- Display Now Playing -- Dancing Miku
+            // Click-Event for each Track -- set musicPlayer source to demo -- create text for Now Playing
             trackTitle.addEventListener('click', function (event) {
                 let demo = spot.previewUrl;
                 musicPlayer.src = demo;
@@ -66,12 +64,13 @@ function buildResultsHtml(resultArray) {
                 let miku = document.createElement("img");
                 miku.classList.add("miku");
                 miku.src = "miku-dance.gif";
-                // clear Now Playing for next song
+
+                // clear Now Playing contents -- add next Track and Miku ---
                 trackPlaying.innerHTML = '';
                 trackPlaying.appendChild(nowPlaying);
                 trackPlaying.appendChild(miku);
 
-                // Stop Dancing Miku on Pause ---
+                // Stop Now Playing and Miku on Pause ---
                 musicPlayer.addEventListener("pause", function () {
                     miku.style.display = "none";
                     nowPlaying.style.display = "none";

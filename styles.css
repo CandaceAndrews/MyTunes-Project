@@ -18,10 +18,13 @@ body {
     border-bottom-color: #64c889;
     border-bottom-style: solid;
     width: 50%;
+    margin-right: 15px;
 }
 
 #serach-form {
-    display: inline-flex;
+    display: inline-block;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #search-text {
@@ -32,13 +35,15 @@ body {
 }
 
 button {
-    display: inline-flex;
     background-color: #89e9d0;
     width: fit-content;
+    position: fixed;
+    top: 42px;
+    margin-left: 6px;
 }
 
 .search-results-h3 {
-    background-color: #314537;
+    background-color: #4d6554;
     color: #dae5d6;
     border-bottom-width: 2px;
     border-bottom-color: #64c889;
@@ -71,4 +76,18 @@ button {
 
 .no-results {
     font-size: 25px;
+}
+
+.miku {
+    height: 100px;
+    width: auto;
+    border-radius: 10%;
+    border-style: solid;
+    border-color: #314537;
+}
+
+#audio-player {
+    border: 2px solid;
+    border-color: #64c889;
+    border-radius: 37%;
 }

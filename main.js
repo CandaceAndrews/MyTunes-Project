@@ -4,6 +4,7 @@ const baseUrl = "https://proxy-itunes-api.glitch.me/search?term=";
 const endUrl = "&media=music&entity=song&attribute=artistTerm";
 const container = document.querySelector("#musicContainer");
 const musicPlayer = document.querySelector("#audio-player");
+const trackPlaying = document.querySelector("#now-playing");
 
 // Event---Listen for search being submitted
 form.addEventListener("submit", function (event) {
@@ -53,10 +54,30 @@ function buildResultsHtml(resultArray) {
             trackTitle.classList.add("track-name");
             trackTitle.innerText = `Track: ${spot.trackName}`;
 
-            // Click-Event for each demo button
+            // Click-Event for each demo button -- Display Now Playing -- Dancing Miku
             trackTitle.addEventListener('click', function (event) {
                 let demo = spot.previewUrl;
                 musicPlayer.src = demo;
+                let nowPlaying = document.createElement("p");
+                nowPlaying.classList.add("now-playing");
+                nowPlaying.innerText = `Now Playing: ${spot.trackName}`;
+                trackPlaying.innerHTML = '';
+
+                // Add Dancing Miku gif ---
+                let miku = document.createElement("img");
+                miku.classList.add("miku");
+                miku.src = "miku-dance.gif";
+                trackPlaying.appendChild(nowPlaying);
+                trackPlaying.appendChild(miku);
+                // Stop Dancing Miku on Pause ---
+                musicPlayer.addEventListener("pause", function () {
+                    miku.style.display = "none";
+                    nowPlaying.style.display = "none";
+                })
+                musicPlayer.addEventListener("play", function () {
+                    miku.style.display = "block";
+                    nowPlaying.style.display = "block";
+                })
             })
 
             // Artist Name---

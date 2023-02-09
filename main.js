@@ -61,14 +61,16 @@ function buildResultsHtml(resultArray) {
                 let nowPlaying = document.createElement("p");
                 nowPlaying.classList.add("now-playing");
                 nowPlaying.innerText = `Now Playing: ${spot.trackName}`;
-                trackPlaying.innerHTML = '';
 
                 // Add Dancing Miku gif ---
                 let miku = document.createElement("img");
                 miku.classList.add("miku");
                 miku.src = "miku-dance.gif";
+                // clear Now Playing for next song
+                trackPlaying.innerHTML = '';
                 trackPlaying.appendChild(nowPlaying);
                 trackPlaying.appendChild(miku);
+
                 // Stop Dancing Miku on Pause ---
                 musicPlayer.addEventListener("pause", function () {
                     miku.style.display = "none";

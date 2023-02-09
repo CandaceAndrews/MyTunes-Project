@@ -37,9 +37,6 @@ body {
 button {
     background-color: #89e9d0;
     width: fit-content;
-    position: fixed;
-    top: 42px;
-    margin-left: 6px;
 }
 
 .search-results-h3 {
@@ -48,7 +45,7 @@ button {
     border-bottom-width: 2px;
     border-bottom-color: #64c889;
     border-bottom-style: solid;
-
+    padding-left: 9px;
 }
 
 #musicContainer {
@@ -84,10 +81,23 @@ button {
     border-radius: 10%;
     border-style: solid;
     border-color: #314537;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 #audio-player {
     border: 2px solid;
     border-color: #64c889;
     border-radius: 37%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    display: block;
+}
+
+#now-playing {
+    text-align: center;
+    font-size: 25px;
 }
